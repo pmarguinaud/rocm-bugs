@@ -1,0 +1,7 @@
+*.x
+*.mod
+*.o
+*.eo
+.*.swp
+*.ok
+actke_openacc.F90

@@ -4,16 +4,13 @@ BUILD=.
 
 all: exe
 
-$(BUILD)/actke_openacc.intfb.ok: $(BUILD)/actke_openacc.intfb.h 
-	touch $(BUILD)/actke_openacc.intfb.ok
-
 $(BUILD)/fxtran_acdc_stack_mod.mod: $(BUILD)/fxtran_acdc_stack_mod.F90 
 	$(FC) -c $(BUILD)/fxtran_acdc_stack_mod.F90
 
 $(BUILD)/actke_openacc.o: $(BUILD)/actke_openacc.F90 fxtran_acdc_stack_mod.mod
 	$(FC) -o $(BUILD)/actke_openacc.o -c $(BUILD)/actke_openacc.F90
 
-$(BUILD)/main_actke.o: $(BUILD)/main_actke.F90 actke_openacc.intfb.ok fxtran_acdc_stack_mod.mod
+$(BUILD)/main_actke.o: $(BUILD)/main_actke.F90 fxtran_acdc_stack_mod.mod
 	$(FC) -o $(BUILD)/main_actke.o -c $(BUILD)/main_actke.F90
 
 $(BUILD)/main_actke.x: $(BUILD)/main_actke.o $(BUILD)/actke_openacc.o

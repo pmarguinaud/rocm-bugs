@@ -25,11 +25,6 @@ INTEGER :: NGPBLKS, JBLK
 
       DO JLON = 1, NPROMA
 
-        YLSTACK%L8 = fxtran_acdc_stack_l8 (YFXTRAN_ACDC_STACK, JBLK, NGPBLKS)
-        YLSTACK%U8 = fxtran_acdc_stack_u8 (YFXTRAN_ACDC_STACK, JBLK, NGPBLKS)
-        YLSTACK%L4 = fxtran_acdc_stack_l4 (YFXTRAN_ACDC_STACK, JBLK, NGPBLKS)
-        YLSTACK%U4 = fxtran_acdc_stack_u4 (YFXTRAN_ACDC_STACK, JBLK, NGPBLKS)
-
         CALL ACTKE_OPENACC ( JLON, KLON, KLEV, YDSTACK=YLSTACK)
 
       ENDDO

@@ -2,6 +2,8 @@
 
 \rm -f *.o *.mod
 
+. ./env.afar.sh
+
 
 FC="flang -march=native  -Qunused-arguments -fPIC -ffree-form -cpp -fbackslash -fconvert=big-endian -O2 -ffp-contract=off -fopenmp -Werror -fPIC -fopenmp --offload-arch=gfx942 -lflang_rt.hostdevice"
 

@@ -1,0 +1,3 @@
++ /perm/sor/install/rocm/8873/bin/amdflang test_gang.F90
+ld.lld: error: /dev/shm/_tmpdir_.sor.34942523/test_gang-e84665.o: requires an executable stack, but -z execstack is not specified
+flang-22: error: linker command failed with exit code 1 (use -v to see invocation)

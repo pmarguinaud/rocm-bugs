@@ -162,6 +162,7 @@ typedef struct _pos_t {
 int
 main(int argc, char *argv[])
 {
+
   int c;
   int errflg = 0;
   int j, jn;
@@ -224,6 +225,8 @@ main(int argc, char *argv[])
       fprintf(stderr, "new_argv[%d] = '%s'\n", j, new_argv[j]);
     }
   }
+
+#ifdef UNDEF
 
   while (!errflg && (c = getopt(new_argc, new_argv, FLAGS)) != -1) {
     int origin = 0;
@@ -304,138 +307,9 @@ main(int argc, char *argv[])
     }
   }
 
-  if (!errflg) {
-    /* So far now errors --> proceed with input & sort & output */
-    FILE *fpin = input_file ? fopen(input_file,"r") : stdin;
-    char *buf = NULL;
-
-    if (fpin) {
-      int buflen = 0;
-      char *pbuf = NULL;
-      int curlen = 0;
-      
-      while ((c = fgetc(fpin)) != EOF) {
-	if (curlen >= buflen) {
-	  char *newbuf = NULL;
-	  buflen += 1048576;
-	  ALLOC(newbuf, buflen+1);
-	  if (buf) {
-	    memcpy(newbuf,buf,curlen);
-	    FREE(buf);
-	  }
-	  buf = newbuf;
-	  pbuf = buf + curlen;
-	}
-	*pbuf++ = c;
-	++curlen;
-      }
-      if (pbuf) *pbuf = '\0';
-    }
-    else {
-      fprintf(stderr,"***Error: Unable to open input file '%s'\n",input_file);
-      ++errflg;
-    }
-    
-    if (buf) {
-      str_t *x = NULL;
-      int numlines = 0;
-      char *nl = buf;
-      line_t *this_lines = NULL;
-      line_t *lines = NULL;
-
-      CALLOC(lines,1);
-      lines->s = nl;
-      this_lines = lines;
-      ++numlines;
-
-      while ((nl = strchr(nl,'\n')) != NULL) {
-	line_t *next_lines = NULL;
-	*nl++ = '\0';
-	if (*nl == '\0') break;
-
-	CALLOC(next_lines, 1);
-	next_lines->s = nl;
-	this_lines->next = next_lines;
-	this_lines = next_lines;
-	++numlines;
-      }
-
-      if (verbose) fprintf(stderr,"numlines = %d\n",numlines);
-
-      CALLOC(x, numlines);
-      this_lines = lines;
-      for (j=0; j<numlines; ++j) {
-	line_t *saveptr = this_lines;
-	x[j].s = this_lines->s;
-	x[j].num = (!pos && numeric) ? atof(this_lines->s) : 0;
-	x[j].j = j;
-	x[j].off = 0;
-	this_lines = this_lines->next;
-	FREE(saveptr);
-      }
-
-      if (!pos) {
-	if (numeric) {
-	  qsort(x, numlines, sizeof(*x),
-		reverse ?
-		(int (*)(const void *, const void *))NumCmpRev :
-		(int (*)(const void *, const void *))NumCmp);
-	}
-	else {
-	  qsort(x, numlines, sizeof(*x),
-		reverse ?
-		(int (*)(const void *, const void *))StrCmpRev :
-		(int (*)(const void *, const void *))StrCmp);
-	}
-      }
-      else {
-	while (this_pos) {
-	  int jf;
-	  int pos1 = this_pos->pos1;
-	  int pos2 = this_pos->pos2;
-	  if (pos2 >= pos1) {
-	    for (jf = pos2; jf >= pos1; --jf) {
-	      ExtractNumField(jf, x, numlines);
-	      qsort(x, numlines, sizeof(*x),
-		    reverse ?
-		    (int (*)(const void *, const void *))NumCmpRev :
-		    (int (*)(const void *, const void *))NumCmp);
-	      no_ties = 1; /* Correct ? */
-	    }
-	  }
-	  this_pos = this_pos->prev;
-	}
-      }
-
-      {
-	FILE *fpout = output_file ? fopen(output_file,"w") : stdout;
-	if (fpout) {
-	  if (unique) {
-	    const char *prev_line = NULL;
-	    for (j=0; j<numlines; ++j) {
-	      const char *this_line = x[j].s;
-	      if (!prev_line || !strequ(prev_line,this_line)) {
-		fprintf(fpout,"%s\n",this_line);
-		prev_line = this_line;
-	      }
-	    }
-	  }
-	  else {
-	    for (j=0; j<numlines; ++j) {
-	      fprintf(fpout,"%s\n",x[j].s);
-	    }
-	  }
-	  if (output_file) fclose(fpout);
-	}
-	else {
-	  fprintf(stderr,"***Error: Unable to open output file '%s'\n",output_file);
-	  ++errflg;
-	}
-      }
-
-    }
-  }
+#endif
 
   return errflg;
+
 }
 

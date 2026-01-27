@@ -177,27 +177,14 @@ main(int argc, char *argv[])
   char *output_file = NULL;
   char *input_file = NULL;
   
-  for (j=1; j<argc; ++j) {
-    char *opt = argv[j];
-    if (strequ(opt,"-v")) {
-      verbose = 1;
-      break;
-    }
-  }
-
-
   for (j=0; !errflg && j<argc; ) {
     char *opt = argv[j];
+    int pos1 = atoi(opt+1)+1;
+    int pos2 = pos1;
 
-
-      int pos1 = atoi(opt+1)+1;
-      int pos2 = pos1;
-
-      {
-	int len = 100;
-        ALLOC(new_argv[jn], len);
-        snprintf(new_argv[jn++], len, "-k%d,%d",pos1,pos2);
-      }
+    int len = 100;
+    ALLOC(new_argv[jn], len);
+    snprintf(new_argv[jn++], len, "-k%d,%d",pos1,pos2);
 
     ++j;
   }

@@ -22,7 +22,7 @@ int main (int argc, char *argv[])
         new_argv[jn] = malloc (_nbytes); 
         if (! new_argv[jn]) 
           { 
-            fprintf(stderr,"***Error: Unable to ALLOCate %lld bytes at %s:%d\n", _nbytes, "toto.c", 27); 
+            fprintf(stderr,"***Error: Unable to ALLOCate %lld bytes at %s:%d\n", _nbytes, __FILE__, __LINE__);
             abort(); 
           } 
       }

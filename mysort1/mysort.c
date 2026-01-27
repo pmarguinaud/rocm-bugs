@@ -35,6 +35,8 @@ typedef          long long int  ll_t;
 
 #define FLAGS "fK:k:no:ruv"
 
+#ifdef UNDEF
+
 static int no_ties = 0;
 static int ignore_case = 0;
 
@@ -151,6 +153,7 @@ ExtractNumField(int jf, str_t x[], int numlines)
   }
 }
 
+#endif
 
 typedef struct _pos_t {
   int pos1;

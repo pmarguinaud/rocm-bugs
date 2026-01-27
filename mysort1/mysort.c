@@ -17,12 +17,10 @@ int main (int argc, char *argv[])
       int pos2 = pos1;
    
       int len = 100;
-      { 
-        long long int _nbytes = ( ((1) > ((len))) ? (1) : ((len)) ) * sizeof(*(new_argv[jn])); 
-        new_argv[jn] = malloc (_nbytes); 
-        if (! new_argv[jn]) 
-          abort(); 
-      }
+      long long int _nbytes = ( ((1) > ((len))) ? (1) : ((len)) ) * sizeof(*(new_argv[jn])); 
+      new_argv[jn] = malloc (_nbytes); 
+      if (! new_argv[jn]) 
+        abort(); 
       snprintf(new_argv[jn++], len, "-k%d,%d",pos1,pos2);
     }
 

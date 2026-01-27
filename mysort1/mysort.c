@@ -185,47 +185,22 @@ main(int argc, char *argv[])
     }
   }
 
-  if (verbose) fprintf(stderr,"argc = %d\n", argc);
 
-  CALLOC(new_argv, argc);
-  jn = 0;
   for (j=0; !errflg && j<argc; ) {
     char *opt = argv[j];
-    if (verbose) fprintf(stderr, "argv[%d] = '%s'\n", j, argv[j]);
 
-    if (*opt == '+' && IsNumber(opt+1)) {
+
       int pos1 = atoi(opt+1)+1;
       int pos2 = pos1;
 
-      if (j < argc - 1) {
-	char *next_opt = argv[j+1];
-	if (*next_opt == '-' && IsNumber(next_opt+1)) {
-	  pos2 = atoi(next_opt+1)+1;
-	  ++j;
-	}
-      } /* if (j < argc - 1) */
-
       {
 	int len = 100;
-	ALLOC(new_argv[jn], len);
-	snprintf(new_argv[jn++], len, "-k%d,%d",pos1,pos2);
+        ALLOC(new_argv[jn], len);
+        snprintf(new_argv[jn++], len, "-k%d,%d",pos1,pos2);
       }
-    }
-    else {
-      new_argv[jn++] = STRDUP(opt);
-    }
+
     ++j;
   }
-
-  new_argc = jn;
-
-  if (verbose) {
-    fprintf(stderr,"new_argc = %d\n", new_argc);
-    for (j=0; j<new_argc; ++j) {
-      fprintf(stderr, "new_argv[%d] = '%s'\n", j, new_argv[j]);
-    }
-  }
-
 
   return errflg;
 

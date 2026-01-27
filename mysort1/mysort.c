@@ -21,10 +21,7 @@ int main (int argc, char *argv[])
         long long int _nbytes = ( ((1) > ((len))) ? (1) : ((len)) ) * sizeof(*(new_argv[jn])); 
         new_argv[jn] = malloc (_nbytes); 
         if (! new_argv[jn]) 
-          { 
-            fprintf(stderr,"***Error: Unable to ALLOCate %lld bytes at %s:%d\n", _nbytes, __FILE__, __LINE__);
-            abort(); 
-          } 
+          abort(); 
       }
       snprintf(new_argv[jn++], len, "-k%d,%d",pos1,pos2);
     }

@@ -21,19 +21,10 @@ int
 main(int argc, char *argv[])
 {
 
-  int c;
-  int errflg = 0;
   int j, jn;
-  int new_argc = argc;
   char **new_argv = NULL;
-  int numeric = 0;
-  int reverse = 0;
-  int unique = 0;
-  int verbose = 0;
-  char *output_file = NULL;
-  char *input_file = NULL;
   
-  for (j=0; !errflg && j<argc; ) {
+  for (j=0; j<argc; ) {
     char *opt = argv[j];
     int pos1 = atoi(opt+1)+1;
     int pos2 = pos1;
@@ -45,7 +36,7 @@ main(int argc, char *argv[])
     ++j;
   }
 
-  return errflg;
+  return 0;
 
 }
 

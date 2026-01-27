@@ -9,5 +9,5 @@ amdclang  -DLINUX -DLITTLE  -fopenmp -Wl,-z,execstack \
 
 amdclang -fopenmp -Wl,-z,execstack --offload-arch=gfx942 -lflang_rt.hostdevice \
   -O1 -g -Wl,--export-dynamic -fopenmp -Wl,-z,execstack --offload-arch=gfx942 \
-  -lflang_rt.hostdevice
+  -lflang_rt.hostdevice \
   mysort.o -o mysort 

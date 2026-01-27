@@ -213,6 +213,8 @@ main(int argc, char *argv[])
     }
   }
 
+#ifdef UNDEF
+
   if (verbose) fprintf(stderr,"argc = %d\n", argc);
 
   CALLOC(new_argv, argc);
@@ -464,6 +466,8 @@ main(int argc, char *argv[])
 
     }
   }
+
+#endif
 
   return errflg;
 }

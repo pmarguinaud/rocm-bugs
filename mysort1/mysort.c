@@ -7,10 +7,8 @@
 #undef MAX
 #define MAX(a,b) ( ((a) > (b)) ? (a) :  (b) )
 
-typedef          long long int  ll_t;
-
 #define ALLOC(x,size) { \
-  ll_t _nbytes = MAX(1,(size)) * sizeof(*(x)); \
+  long long int _nbytes = MAX(1,(size)) * sizeof(*(x)); \
   x = malloc(_nbytes); \
   if (!x) { \
     fprintf(stderr,"***Error: Unable to ALLOCate %lld bytes at %s:%d\n",\
@@ -18,23 +16,6 @@ typedef          long long int  ll_t;
     abort(); \
   } \
 }
-
-#define CALLOC(x,size) { \
-  ll_t _nbytes = MAX(1,(size)) * sizeof(*(x)); \
-  ALLOC(x,size); \
-  memset(x,0,_nbytes); \
-}
-
-#define FREE(x) ((x) ? (free(x), (x) = NULL) : NULL)
-
-#define STRDUP(s) strdup((s) ? (s) : "")
-
-
-#define strequ(s1,s2)     ((const void *)(s1) && (const void *)(s2) && *(s1) == *(s2) && strcmp(s1,s2) == 0)
-
-
-#define FLAGS "fK:k:no:ruv"
-
 
 int
 main(int argc, char *argv[])

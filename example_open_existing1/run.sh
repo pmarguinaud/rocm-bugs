@@ -12,5 +12,5 @@ $FC -c yomvirt1.F90
 $FC -c example_open_existing.F90 
 \rm -f libodb.a
 ar crv libodb.a yomvirt1.o
-$FC example_open_existing.o -o example_open_existing.x libodb.a libodb.a 
+$FC example_open_existing.o libodb.a libodb.a 
 

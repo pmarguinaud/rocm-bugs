@@ -2,3 +2,4 @@ a.out
 *.x
 *.o
 *.mod
+*.a

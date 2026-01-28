@@ -4,7 +4,7 @@ export PATH=/ec/res4/hpcperm/sor/install/rocm/8873/bin:$PATH
 
 set -x
 
-FC="amdflang -fopenmp -fPIC -O1 -g"
+FC="amdflang -fopenmp"
 
 for opt in "" "--offload-arch=gfx942 -lflang_rt.hostdevice"
 do

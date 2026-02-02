@@ -7,7 +7,7 @@ amdclang mysort.c
 
 \ls -l a.out
 
-amdclang -fopenmp --offload-arch=gfx942 -lflang_rt.hostdevice mysort.c 
+amdclang -fopenmp --offload-arch=gfx942 -lflang_rt.hostdevice mysort.c -lm
 
 \ls -l a.out
 

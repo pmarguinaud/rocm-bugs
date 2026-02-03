@@ -1,0 +1,8 @@
+﻿!mod$ v1 sum:ba7b01757a263dad
+!need$ fe3180dd7f22d4c1 n parkind1
+module parphy
+use parkind1,only:jpim
+use parkind1,only:jprb
+real(8),parameter::rkap=4.0000000000000002220446049250313080847263336181640625e-1_8
+real(8),parameter::repdu2=1.0000000000000001942890293094023945741355419158935546875e-2_8
+end

@@ -1,0 +1,137 @@
+﻿!mod$ v1 sum:bdaf13f8815842fc
+!need$ fe3180dd7f22d4c1 n parkind1
+!need$ 99f7ec52259902ea n yomhook
+module spp_gen_mod
+use parkind1,only:jpim
+use parkind1,only:jprb
+use yomhook,only:lhook
+use yomhook,only:dr_hook
+use yomhook,only:jphook
+use yomhook,only:yomhook$yomhook$dr_hook_default8=>dr_hook_default8
+integer(4),parameter::jp_lab_len=16_4
+integer(4),parameter::jp_ver_len=32_4
+integer(4),parameter::jp_mag=4_4
+integer(4),parameter::jp_cli=4_4
+integer(4),parameter::jp_off=2_4
+integer(4),parameter::jpmaxperts=128_4
+integer(4),parameter::jpmxscales=2_4
+character(16_4,1),parameter::cp_undefined="????????????????"
+type::spp_pert
+character(16_4,1)::label="????????????????"
+logical(4)::on=.false._4
+integer(4)::idistr
+real(8)::xmag(1_8:4_8)=[REAL(8)::0._8,0._8,0._8,0._8]
+real(8)::mu(1_8:4_8)=[REAL(8)::0._8,0._8,0._8,0._8]
+real(8)::xmin(1_8:4_8)=[REAL(8)::-1.79769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368e308_8,-1.79769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368e308_8,-1.79769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368e308_8,-1.79769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368e308_8]
+real(8)::xmax(1_8:4_8)=[REAL(8)::1.79769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368e308_8,1.79769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368e308_8,1.79769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368e308_8,1.79769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368e308_8]
+real(8)::xclipmin=-1.79769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368e308_8
+real(8)::xclipmax=1.79769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368e308_8
+real(8)::xuniform_offset
+integer(4)::nmag=1_4
+logical(4)::ln1=.true._4
+integer(4)::nseed_off(1_8:2_8)=[INTEGER(4)::0_4,0_4]
+integer(4)::noff=1_4
+integer(4)::nrf=1_4
+integer(4)::nrf_radgrid=0_4
+logical(4)::radgrid=.false._4
+character(16_4,1)::rf_pert_label="????????????????"
+integer(4)::ic=1_4
+integer(4)::mp
+integer(4)::mp_radgrid
+real(8)::tau(1_8:2_8)=[REAL(8)::-9.99e2_8,-9.99e2_8]
+real(8)::sdev(1_8:2_8)=[REAL(8)::-9.99e2_8,-9.99e2_8]
+real(8)::xlcor(1_8:2_8)=[REAL(8)::-9.99e2_8,-9.99e2_8]
+end type
+intrinsic::huge
+type::spp_model
+character(32_4,1)::version
+integer(4)::nmax
+character(16_4,1),allocatable::defined_perts(:)
+character(16_4,1),allocatable::active_perts(:)
+integer(4)::ndef=0_4
+integer(4)::nact
+integer(4)::nrftotal=0_4
+integer(4)::nrftotal_radgrid=0_4
+integer(4),allocatable::nseed_off(:)
+type(spp_pert),allocatable::pndef(:)
+type(spp_pert),allocatable::pn(:)
+real(8)::tau(1_8:2_8)
+real(8)::xlcor(1_8:2_8)
+real(8)::sdev(1_8:2_8)
+integer(4)::kseed_off
+character(10_4,1)::summary="ifs       "
+end type
+contains
+subroutine allocate_spp_model(sm,knmax)
+type(spp_model),intent(inout)::sm
+integer(4),intent(in)::knmax
+end
+subroutine deallocate_spp_model(sm)
+type(spp_model),intent(inout)::sm
+end
+subroutine update_mu_spp_pertn(pn)
+type(spp_pert),intent(inout)::pn
+end
+subroutine implement_spp_pertn(sm,cdlabel,pxmag,pxmin,pxmax,xclipmin,xclipmax,ic,kidistr,knseed_off,knrf,ldln1,ldradgrid,cd_rf_pert_label,psdev,pxlcor,ptau,xuniform_offset)
+type(spp_model),intent(inout)::sm
+character(*,1),intent(in)::cdlabel
+real(8),intent(in)::pxmag(:)
+real(8),intent(in),optional::pxmin(:)
+real(8),intent(in),optional::pxmax(:)
+real(8),intent(in),optional::xclipmin
+real(8),intent(in),optional::xclipmax
+integer(4),intent(in),optional::ic
+integer(4),intent(in),optional::kidistr
+integer(4),intent(in),optional::knseed_off(:)
+integer(4),intent(in),optional::knrf
+logical(4),intent(in),optional::ldln1
+logical(4),intent(in),optional::ldradgrid
+character(*,1),intent(in),optional::cd_rf_pert_label
+real(8),intent(in),optional::psdev(:)
+real(8),intent(in),optional::pxlcor(:)
+real(8),intent(in),optional::ptau(:)
+real(8),intent(in),optional::xuniform_offset
+end
+subroutine get_active_spp_perts(sm,ku_nam,ku_out)
+type(spp_model),intent(inout)::sm
+integer(4),intent(in)::ku_nam
+integer(4),intent(in)::ku_out
+end
+subroutine map_indices_spp_nml(sm,ku_nam,ku_out,kidx_map)
+type(spp_model),intent(inout)::sm
+integer(4),intent(in)::ku_nam
+integer(4),intent(in)::ku_out
+integer(4),intent(out)::kidx_map(1_8:128_8)
+end
+subroutine modify_spp_perts(sm,kidx_map,ku_nam,ku_out)
+type(spp_model),intent(inout)::sm
+integer(4),intent(in)::kidx_map(1_8:128_8)
+integer(4),intent(in)::ku_nam
+integer(4),intent(in)::ku_out
+end
+function get_spp_idx(cd_label,sm)
+character(*,1),intent(in)::cd_label
+type(spp_model),intent(in)::sm
+integer(4)::get_spp_idx
+end
+function get_spp_idx_def(cd_label,sm)
+character(*,1),intent(in)::cd_label
+type(spp_model),intent(in)::sm
+integer(4)::get_spp_idx_def
+end
+function active_spp_pn(cd_label,sm)
+character(*,1),intent(in)::cd_label
+type(spp_model),intent(in)::sm
+logical(4)::active_spp_pn
+end
+subroutine write_spp_pn_infoline(p,summary,ku)
+type(spp_pert),intent(in)::p
+character(*,1),intent(in)::summary
+integer(4),intent(in),optional::ku
+end
+subroutine write_spp_model_table(sm,ku,ldefined)
+type(spp_model),intent(in)::sm
+integer(4),intent(in),optional::ku
+logical(4),intent(in),optional::ldefined
+end
+end

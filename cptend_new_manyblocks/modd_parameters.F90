@@ -1,0 +1,34 @@
+﻿!mod$ v1 sum:25b02d753545073c
+module modd_parameters
+integer(4),parameter::jphext=0_4
+integer(4),parameter::jpvext=0_4
+integer(4),parameter::jpvext_turb=1_4
+integer(4),parameter::jpmodelmax=8_4
+integer(4),parameter::jpcplfilemax=24_4
+integer(4),parameter::jpbumax=250_4
+integer(4),parameter::jpbupromax=60_4
+integer(4),parameter::jprimmax=6_4
+integer(4),parameter::jpsvmax=200_4
+integer(4),parameter::jpsvnamelgtmax=10_4
+real(8),parameter::xundef=1.e20_8
+real(8),parameter::xnegundef=-9.99e2_8
+integer(4),parameter::nundef=1000000000_4
+integer(4),parameter::nnegundef=-999_4
+integer(4),parameter::jpdummy=20_4
+integer(4),parameter::jpoutmax=192_4
+integer(4),parameter::jpoutvarmax=192_4
+integer(4),parameter::nbunamelgtmax=32_4
+integer(4),parameter::ncommentlgtmax=100_4
+integer(4),parameter::nmnhnamelgtmax=32_4
+integer(4),parameter::nstdnamelgtmax=64_4
+integer(4),parameter::ndirnamelgtmax=512_4
+integer(4),parameter::nfilenamelgtmax=32_4
+integer(4),parameter::nfilenamelgtmaxlfi=28_4
+integer(4),parameter::nlfimaxcommentlength=100_4
+integer(4),parameter::jplimaccnmax=10_4
+integer(4),parameter::jplimaifnmax=10_4
+integer(4),parameter::nnbcrystalmax=4_4
+integer(4),parameter::ngridunknown=-1_4
+integer(4),parameter::nexpnamelgtmax=32_4
+integer(4),parameter::nsegnamelgtmax=32_4
+end

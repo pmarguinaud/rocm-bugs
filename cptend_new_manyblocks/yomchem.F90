@@ -1,0 +1,75 @@
+﻿!mod$ v1 sum:33bee41ecea1ab39
+!need$ fe3180dd7f22d4c1 n parkind1
+module yomchem
+use parkind1,only:jpim
+use parkind1,only:jprb
+real(8),parameter::repschem=1.000000000000000038494869749191839081371989361591338301396127643500357819184021224145908490754663944244384765625e-25_8
+integer(4),parameter::iextr_em=1_4
+integer(4),parameter::iextr_dd=2_4
+integer(4),parameter::iextr_wd=3_4
+integer(4),parameter::iextr_ch=4_4
+integer(4),parameter::iextr_chtr=5_4
+integer(4),parameter::iextr_ng=6_4
+integer(4),parameter::iextr_fe=7_4
+integer(4),parameter::iextr_sdm=8_4
+integer(4),parameter::iextr_cond=9_4
+integer(4),parameter::iextr_nuc=10_4
+integer(4),parameter::iextr_rmod=11_4
+integer(4),parameter::iextr_roh=12_4
+integer(4),parameter::iextr_ph=13_4
+integer(4),parameter::iextr_roh_trop=14_4
+integer(4),parameter::iextr_chemx=15_4
+type::tchem
+character(20_4,1)::chem_scheme
+logical(4)::lchem_diac
+logical(4)::lchem_bascoe_jon
+logical(4)::lchem_bascoe_hetchem
+logical(4)::lchem_extendjno2
+logical(4)::lmozart_rsf_dummy
+logical(4)::lchem_jout
+logical(4)::lchem_light
+real(8)::rchem_linox_scaling
+logical(4)::lchem_acnox
+integer(4)::kchem_noxadv
+integer(4)::kchem_wetdep
+integer(4)::kchem_drydep
+logical(4)::lchem_anao3
+real(8)::smasscor(1_8:300_8,1_8:4_8)
+logical(4)::lchem_anach4
+logical(4)::lchem_weak_ch4_relaxation
+logical(4)::lchem_convscav
+logical(4)::lchem_cshape
+logical(4)::lchem_cshape98
+logical(4)::lchem_wdfr
+logical(4)::lchem_fix_ch4
+integer(4)::kchem_yearpi
+real(8)::rch4const
+integer(4)::kchem_solve
+logical(4)::lchem_o3rad
+logical(4)::lchem_tl
+logical(4)::lchem_vso2_couple
+logical(4)::lchem_aeroi
+integer(4)::iextr_free(1_8:3_8,1_8:160_8)
+integer(4)::nucoch1
+integer(4)::nucoch2
+integer(4)::nchem_lcocoef
+character(5_4,1)::chem_lcovers
+logical(4)::lchem_lcomeso
+logical(4)::lchem_lcocstclim
+real(8)::rchem_lcotautop
+real(8)::rchem_lcoclimtop
+logical(4)::lchem_lcolimit
+real(8)::rchem_lcocoefa1
+character(5_4,1)::csolmet_asis
+integer(4)::m_soliter_asis
+real(8)::solcv_asis
+real(8)::rtol_asis
+real(8)::atol_asis
+integer(4)::n_f_rtol_asis
+integer(4)::n_f_atol_asis
+real(8),allocatable::tco2dg(:,:)
+real(8),allocatable::tcotop(:)
+logical(4)::lchem_arpclim
+logical(4)::lchem_emich4
+end type
+end

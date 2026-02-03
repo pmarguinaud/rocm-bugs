@@ -1,0 +1,97 @@
+﻿!mod$ v1 sum:1fac36ab6b4d506b
+!need$ fe3180dd7f22d4c1 n parkind1
+module yomsta
+use parkind1,only:jpim
+use parkind1,only:jprb
+real(8)::rdtdz1
+real(8)::rdtdz2
+real(8)::rdtdz3
+real(8)::rdtdz4
+real(8)::rdtdz5
+real(8)::rdtdz6
+real(8)::rdtdz7
+real(8)::rdtdz8
+real(8)::rdtdz9
+real(8)::rztrop
+real(8)::rzstra
+real(8)::rzstr2
+real(8)::rzstpo
+real(8)::rzmeso
+real(8)::rzmes2
+real(8)::rzmepo
+real(8)::rzabov
+real(8)::rtsur
+real(8)::rttrop
+real(8)::rtstra
+real(8)::rtstr2
+real(8)::rtstpo
+real(8)::rtmeso
+real(8)::rtmes2
+real(8)::rtmepo
+real(8)::rtabov
+real(8)::rptrop
+real(8)::rpstra
+real(8)::rpstr2
+real(8)::rpstpo
+real(8)::rpmeso
+real(8)::rpmes2
+real(8)::rpmepo
+real(8)::rpabov
+real(8)::hextrap
+integer(4)::nlextrap
+real(8)::vztrop
+real(8)::vzstra
+real(8)::vzstr2
+real(8)::vzstpo
+real(8)::vzmeso
+real(8)::vzmes2
+real(8)::vzmepo
+real(8)::vzabov
+real(8)::vtsur
+real(8)::vttrop
+real(8)::vtstra
+real(8)::vtstr2
+real(8)::vtstpo
+real(8)::vtmeso
+real(8)::vtmes2
+real(8)::vtmepo
+real(8)::vtabov
+real(8)::vptrop
+real(8)::vpstra
+real(8)::vpstr2
+real(8)::vpstpo
+real(8)::vpmeso
+real(8)::vpmes2
+real(8)::vpmepo
+real(8)::vpabov
+real(8)::vdtdz1
+real(8)::vdtdz2
+real(8)::vdtdz3
+real(8)::vdtdz4
+real(8)::vdtdz5
+real(8)::vdtdz6
+real(8)::vdtdz7
+real(8)::vdtdz8
+real(8)::vdtdz9
+type::tsta
+real(8),allocatable::stpreh(:)
+real(8),allocatable::stpre(:)
+real(8),allocatable::stphi(:)
+real(8),allocatable::sttem(:)
+real(8),allocatable::stden(:)
+real(8),allocatable::stz(:)
+real(8),allocatable::svetah(:)
+real(8),allocatable::svetaf(:)
+contains
+procedure::alloc=>allocsta
+procedure::dealloc=>deallocsta
+end type
+contains
+subroutine allocsta(self,klev)
+class(tsta),intent(inout)::self
+integer(4),intent(in)::klev
+end
+subroutine deallocsta(self)
+class(tsta),intent(inout)::self
+end
+end

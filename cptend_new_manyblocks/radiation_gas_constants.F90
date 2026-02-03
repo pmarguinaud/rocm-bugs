@@ -1,0 +1,23 @@
+﻿!mod$ v1 sum:947fc26355ad3ecc
+!need$ fe3180dd7f22d4c1 n parkind1
+module radiation_gas_constants
+use parkind1,only:jprb
+integer(4),parameter::igasnotpresent=0_4
+integer(4),parameter::ih2o=1_4
+integer(4),parameter::ico2=2_4
+integer(4),parameter::io3=3_4
+integer(4),parameter::in2o=4_4
+integer(4),parameter::ico=5_4
+integer(4),parameter::ich4=6_4
+integer(4),parameter::io2=7_4
+integer(4),parameter::icfc11=8_4
+integer(4),parameter::icfc12=9_4
+integer(4),parameter::ihcfc22=10_4
+integer(4),parameter::iccl4=11_4
+integer(4),parameter::ino2=12_4
+integer(4),parameter::nmaxgases=12_4
+real(8),parameter::airmolarmass=2.8969999999999998863131622783839702606201171875e1_8
+real(8),parameter::gasmolarmass(0_8:12_8)=[REAL(8)::0._8,1.801528330000000011068550520576536655426025390625e1_8,4.401100000000000278532752417959272861480712890625e1_8,4.7998199999999997089616954326629638671875e1_8,4.401299999999999812416717759333550930023193359375e1_8,2.801010000000000133013600134290754795074462890625e1_8,1.604299999999999926103555480949580669403076171875e1_8,3.1998799999999999243982529151253402233123779296875e1_8,1.37368599999999986494003678672015666961669921875e2_8,1.209140000000000014779288903810083866119384765625e2_8,8.646899999999999408828443847596645355224609375e1_8,1.53823000000000007503331289626657962799072265625e2_8,4.60054999999999978399500832892954349517822265625e1_8]
+character(6_8,1),parameter::gasname(1_8:12_8)=[CHARACTER(KIND=1,LEN=6)::"H2O   ","CO2   ","O3    ","N2O   ","CO    ","CH4   ","O2    ","CFC11 ","CFC12 ","HCFC22","CCl4  ","NO2   "]
+character(6_8,1),parameter::gaslowercasename(1_8:12_8)=[CHARACTER(KIND=1,LEN=6)::"h2o   ","co2   ","o3    ","n2o   ","co    ","ch4   ","o2    ","cfc11 ","cfc12 ","hcfc22","ccl4  ","no2   "]
+end

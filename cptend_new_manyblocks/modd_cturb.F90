@@ -1,0 +1,54 @@
+﻿!mod$ v1 sum:af4bc4e8aa24a446
+module modd_cturb
+type::csturb_t
+real(8)::xcmfs
+real(8)::xcmfb
+real(8)::xcpr2
+real(8)::xcpr3
+real(8)::xcpr4
+real(8)::xcpr5
+real(8)::xcet
+real(8)::xcdp
+real(8)::xcdd
+real(8)::xcdt
+real(8)::xrm17
+real(8)::xlinf
+real(8)::xalpsbl
+real(8)::xcep
+real(8)::xa0
+real(8)::xa2
+real(8)::xa3
+real(8)::xa5
+real(8)::xctd
+real(8)::xphi_lim
+real(8)::xsbl_o_bl
+real(8)::xftop_o_fsurf
+end type
+type(csturb_t),save,target::csturb
+real(8),pointer::xcmfs
+intrinsic::null
+real(8),pointer::xcmfb
+real(8),pointer::xcpr2
+real(8),pointer::xcpr3
+real(8),pointer::xcpr4
+real(8),pointer::xcpr5
+real(8),pointer::xcet
+real(8),pointer::xcdp
+real(8),pointer::xcdd
+real(8),pointer::xcdt
+real(8),pointer::xrm17
+real(8),pointer::xlinf
+real(8),pointer::xalpsbl
+real(8),pointer::xcep
+real(8),pointer::xa0
+real(8),pointer::xa2
+real(8),pointer::xa3
+real(8),pointer::xa5
+real(8),pointer::xctd
+real(8),pointer::xphi_lim
+real(8),pointer::xsbl_o_bl
+real(8),pointer::xftop_o_fsurf
+contains
+subroutine cturb_associate()
+end
+end

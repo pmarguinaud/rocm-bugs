@@ -1,0 +1,73 @@
+﻿!mod$ v1 sum:39ef97aa99d40e6d
+!need$ fe3180dd7f22d4c1 n parkind1
+module yomtoph
+use parkind1,only:jpim
+use parkind1,only:jprb
+type::ttoph
+real(8),allocatable::rmesou(:)
+real(8),allocatable::rmesot(:)
+real(8),allocatable::rmesoq(:)
+real(8),allocatable::rurel(:)
+real(8),allocatable::rvrel(:)
+real(8),allocatable::rtrel(:)
+real(8),allocatable::rqrel(:)
+real(8)::rfmesoq
+integer(4)::ntqsat
+integer(4)::ntdifu
+integer(4)::ntcoef
+integer(4)::ntdrag
+integer(4)::ntcvim
+integer(4)::nt850
+integer(4)::nt950
+integer(4)::ntplui
+integer(4)::ntradi
+integer(4)::ntnebu
+integer(4)::ntozon
+integer(4)::ntdrme
+integer(4)::ntcoet
+integer(4)::ntajuc
+integer(4)::ntrelaxt
+integer(4)::ntrelaxq
+integer(4)::ntrelaxu
+integer(4)::chem_hpsc_ntop
+integer(4)::chem_hpsc_nbot
+integer(4)::chem_hoxf_nbot
+integer(4)::chem_elem_ntop
+integer(4)::chem_rela_niv
+integer(4)::chem_no_niv
+real(8)::etqsat
+real(8)::etdifu
+real(8)::etcoef
+real(8)::etdrag
+real(8)::etcvim
+real(8)::et850
+real(8)::et950
+real(8)::etplui
+real(8)::etradi
+real(8)::etnebu
+real(8)::etozon
+real(8)::etdrme
+real(8)::etcoet
+real(8)::etajuc
+real(8)::etrelaxt
+real(8)::etrelaxq
+real(8)::etrelaxu
+real(8)::xdrmuk
+real(8)::xdrmux
+real(8)::xdrmup
+real(8)::xdrmtk
+real(8)::xdrmtx
+real(8)::xdrmtp
+real(8)::xdrmqk
+real(8)::xdrmqp
+real(8)::xdrmqx
+real(8)::rclx
+real(8)::tpsclim
+real(8)::etelem
+real(8)::etrela
+real(8)::etpsct
+real(8)::etpscb
+real(8)::ethoxf
+real(8)::etchemno
+end type
+end

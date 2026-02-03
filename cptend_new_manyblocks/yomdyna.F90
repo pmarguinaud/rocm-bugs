@@ -1,0 +1,114 @@
+﻿!mod$ v1 sum:b59ef98b3107b9fd
+!need$ fa74942710692fe7 n intdyn_mod
+!need$ fe3180dd7f22d4c1 n parkind1
+module yomdyna
+use parkind1,only:jpim
+use parkind1,only:jprb
+use intdyn_mod,only:ttnd
+use intdyn_mod,only:tgmvt
+use intdyn_mod,only:tgflt
+type::tdyna
+logical(4)::lnhee
+logical(4)::lnhqe
+logical(4)::lnhhy
+logical(4)::lnhdyn
+logical(4)::lsacc
+logical(4)::lsprt
+logical(4)::ltwotl
+logical(4)::lslag
+integer(4)::npdvar
+integer(4)::nvdvar
+integer(4)::ntpvar
+integer(4)::nd4sys
+logical(4)::lnhx
+logical(4)::lspnhx
+logical(4)::lnhxder
+logical(4)::lgwadv
+integer(4)::ngwadvsi
+logical(4)::lrdbbc
+logical(4)::lsi_nhee
+logical(4)::lslhd
+logical(4)::lslhd_w
+logical(4)::lslhd_t
+logical(4)::lslhd_spd
+logical(4)::lslhd_svd
+logical(4)::lslhd_gfl
+logical(4)::lslhd_old
+logical(4)::lslhd_static
+logical(4)::lslhdquad
+real(8)::slhdkmin
+real(8)::slhdkmax
+real(8)::slhdkref
+real(8)::slhdepsh
+real(8)::slhdepsv
+logical(4)::lslvf
+real(8)::slvfeps
+real(8)::p_slvf_bot
+real(8)::slvfmin
+real(8)::slvftr
+real(8)::p_slvf_tr
+logical(4)::lgradsp
+logical(4)::lpgfsf
+logical(4)::lpgreuse
+logical(4)::lpgftest
+logical(4)::l3dturb
+logical(4)::lsldia
+logical(4)::lrprsltrj
+integer(4)::nqmgmv
+integer(4)::nqmgfl
+logical(4)::lraltvdisp
+logical(4)::lvsplip
+logical(4)::lrhsvweno
+logical(4)::lcomad
+logical(4)::lcomadh
+logical(4)::lcomadv
+logical(4)::lcomad_w
+logical(4)::lcomad_t
+logical(4)::lcomad_spd
+logical(4)::lcomad_svd
+logical(4)::lcomad_sp
+logical(4)::lcomad_gfl
+logical(4)::lnesct
+logical(4)::lnescv
+logical(4)::lnesc
+logical(4)::lsettlst
+logical(4)::lsettlsv
+logical(4)::lsettls
+logical(4)::leltra
+logical(4)::lslinlc2
+logical(4)::lslinl
+logical(4)::lhoislt
+real(8)::hoisltv
+real(8)::hoislth
+logical(4)::lsltvweno
+logical(4)::lrubc
+logical(4)::lbigw
+logical(4)::lpc_full
+logical(4)::lpc_cheap
+logical(4)::lpc_cheap2
+logical(4)::lpc_sphy
+logical(4)::lmixettls
+logical(4)::lmixettls_print
+real(8)::rmixnl_trh
+logical(4)::lsi_update_full
+logical(4)::lsi_update_cheap
+logical(4)::l_rdry_vd
+logical(4)::l_rdry_nhx
+logical(4)::lhyqe_blend
+real(8)::tstart_blend
+real(8)::tstop_blend
+logical(4)::lnhqe_balance
+logical(4)::lnhqe_lastsi
+logical(4)::lnhqe_csvtrmo
+real(8)::rnhqe_delta
+logical(4)::lnhhy_vertic
+logical(4)::lnhhy_balance
+real(8)::rnhhy_delta
+real(8)::rnhhy_taud
+real(8)::rnhhy_taux
+type(ttnd)::yyttnd
+type(tgmvt)::yytgmvt95
+type(tgflt)::yytgflt95
+logical(4)::lslondem_split
+end type
+end

@@ -1,0 +1,45 @@
+﻿!mod$ v1 sum:60966fd19d15adf0
+module modd_convpar_shal
+type::convpar_shal
+real(8)::xa25
+real(8)::xcrad
+real(8)::xctime_shal
+real(8)::xcdepth
+real(8)::xcdepth_d
+real(8)::xdtpert
+real(8)::xatpert
+real(8)::xbtpert
+real(8)::xentr
+real(8)::xzlcl
+real(8)::xzpbl
+real(8)::xwtrig
+real(8)::xnhgam
+real(8)::xtfrz1
+real(8)::xtfrz2
+real(8)::xstabt
+real(8)::xstabc
+real(8)::xaw
+real(8)::xbw
+logical(4)::llsmooth
+end type
+real(8)::xa25
+real(8)::xcrad
+real(8)::xctime_shal
+real(8)::xcdepth
+real(8)::xcdepth_d
+real(8)::xdtpert
+real(8)::xatpert
+real(8)::xbtpert
+real(8)::xentr
+real(8)::xzlcl
+real(8)::xzpbl
+real(8)::xwtrig
+real(8)::xnhgam
+real(8)::xtfrz1
+real(8)::xtfrz2
+real(8)::xstabt
+real(8)::xstabc
+real(8)::xaw
+real(8)::xbw
+logical(4)::llsmooth
+end

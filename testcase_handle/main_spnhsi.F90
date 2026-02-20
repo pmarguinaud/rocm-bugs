@@ -12,10 +12,10 @@ TYPE(TDYN)          :: YDDYN
 TYPE(C_PTR)  :: HANDLE
 INTEGER  ::IRESU
 
-!!!!!loads objet TDYN in CPU memory from file TDYN.CONST.DAT
+!!!!!loads object TDYN in CPU memory from file TDYN.CONST.DAT
 CALL LOAD_TDYN (YDDYN  )
 
-!!!!!beginning of objet TDYN copy to GPU memory from CPU memory
+!!!!!beginning of object TDYN copy to GPU memory from CPU memory
 !$OMP TARGET ENTER DATA MAP(ALLOC:YDDYN)
 !$OMP TARGET UPDATE TO(YDDYN)
 

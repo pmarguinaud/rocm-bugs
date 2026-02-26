@@ -1,0 +1,6 @@
+compile and run with 22.2
+ before kernel in main_spnhsi
+ after kernel in main_spnhsi
+compile and run with 22.3
+ before kernel in main_spnhsi
+./run.sh: line 23: 435333 Segmentation fault      (core dumped) ./main_spnhsi.x

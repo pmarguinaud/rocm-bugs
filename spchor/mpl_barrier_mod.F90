@@ -1,0 +1,102 @@
+!mod$ v1 sum:9bd279974f1c69f5
+!need$ 594d9db76b447338 n mpl_message_mod
+!need$ 14c904233f628ad5 n mpl_data_module
+!need$ d6b0ed10c6360817 n oml_mod
+!need$ 2d97711792dc972b n ec_parkind
+module mpl_barrier_mod
+use ec_parkind,only:jpim
+use oml_mod,only:oml_my_thread
+use mpl_data_module,only:mpi_comm_world
+use mpl_data_module,only:mpl_method
+use mpl_data_module,only:mpl_mbx_size
+use mpl_data_module,only:mpl_unit
+use mpl_data_module,only:mpl_output
+use mpl_data_module,only:mpl_rank
+use mpl_data_module,only:mpl_numproc
+use mpl_data_module,only:mpl_errunit
+use mpl_data_module,only:mpl_ids
+use mpl_data_module,only:mpl_comm
+use mpl_data_module,only:mpl_comm_oml
+use mpl_data_module,only:mpl_opponent
+use mpl_data_module,only:mpl_ncpu_per_node
+use mpl_data_module,only:mpl_max_task_per_node
+use mpl_data_module,only:mpl_task_per_node
+use mpl_data_module,only:mpl_nnodes
+use mpl_data_module,only:lfullnodes
+use mpl_data_module,only:mpl_mynode
+use mpl_data_module,only:mpl_node
+use mpl_data_module,only:mpl_node_tasks
+use mpl_data_module,only:mpl_attached_buffer
+use mpl_data_module,only:lusehlmpi
+use mpl_data_module,only:linitmpi_via_mpl
+use mpl_data_module,only:lthsafempi
+use mpl_data_module,only:jp_attached_buffer_bytes
+use mpl_data_module,only:jp_blocking_standard
+use mpl_data_module,only:jp_blocking_buffered
+use mpl_data_module,only:jp_blocking_synchronous
+use mpl_data_module,only:jp_blocking_ready
+use mpl_data_module,only:jp_non_blocking_standard
+use mpl_data_module,only:jp_non_blocking_buffered
+use mpl_data_module,only:jp_non_blocking_synchronous
+use mpl_data_module,only:jp_non_blocking_ready
+use mpl_data_module,only:lmplusercomm
+use mpl_data_module,only:mplusercomm
+use mpl_data_module,only:mpl_send_count
+use mpl_data_module,only:mpl_send_bytes
+use mpl_data_module,only:mpl_recv_count
+use mpl_data_module,only:mpl_recv_bytes
+use mpl_data_module,only:mpl_world_rank
+use mpl_data_module,only:mpl_world_size
+use mpl_message_mod,only:mpl_message
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+logical(4),private::llabort
+contains
+subroutine mpl_barrier(kcomm,cdstring,kerror)
+integer(4),intent(in),optional::kcomm
+character(*,1),intent(in),optional::cdstring
+integer(4),intent(out),optional::kerror
+end
+end

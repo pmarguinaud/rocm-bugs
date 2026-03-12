@@ -7,12 +7,7 @@ ifeq ($(BUILD), )
 BUILD=.
 endif
 
-all: spchor_strhd2acc.o
-
 include Makefile.inc
-
-$(BUILD)/spchor_strhd2acc.intfb.ok: $(BUILD)/spchor_strhd2acc.intfb.h $(BUILD)/geometry_mod.o $(BUILD)/parkind1.o $(BUILD)/type_model.o
-	touch $(BUILD)/spchor_strhd2acc.intfb.ok
 
 $(BUILD)/bytes_io_mod.o: $(BOOT) $(SRC)/bytes_io_mod.F90 $(BUILD)/ec_parkind.o $(BUILD)/mpl_module.o $(BUILD)/yomhook.o
 	$(FC) -o $(BUILD)/bytes_io_mod.o -c $(SRC)/bytes_io_mod.F90
@@ -577,6 +572,9 @@ $(BUILD)/random_numbers_mix.o: $(BOOT) $(SRC)/random_numbers_mix.F90 $(BUILD)/by
 
 $(BUILD)/reglatlon_field_mix.o: $(BOOT) $(SRC)/reglatlon_field_mix.F90 $(BUILD)/parkind1.o $(BUILD)/yomhook.o $(BUILD)/yomlun.o
 	$(FC) -o $(BUILD)/reglatlon_field_mix.o -c $(SRC)/reglatlon_field_mix.F90
+
+$(BUILD)/spchor_strhd1acc.o: $(BOOT) $(SRC)/spchor_strhd1acc.F90 $(BUILD)/geometry_mod.o $(BUILD)/parkind1.o $(BUILD)/type_model.o
+	$(FC) -o $(BUILD)/spchor_strhd1acc.o -c $(SRC)/spchor_strhd1acc.F90
 
 $(BUILD)/spchor_strhd2acc.o: $(BOOT) $(SRC)/spchor_strhd2acc.F90 $(BUILD)/geometry_mod.o $(BUILD)/parkind1.o $(BUILD)/type_model.o
 	$(FC) -o $(BUILD)/spchor_strhd2acc.o -c $(SRC)/spchor_strhd2acc.F90

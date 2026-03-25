@@ -1,10 +1,8 @@
 #!/bin/bash
 
-export PATH=/ec/res4/hpcperm/sor/install/rocm/8873/bin:$PATH
-
 set -x
 
-FC="amdflang -fopenmp"
+FC="amdflang -Qunused-arguments -fopenmp"
 
 for opt in "" "--offload-arch=gfx942 -lflang_rt.hostdevice"
 do

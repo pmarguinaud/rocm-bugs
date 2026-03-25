@@ -1,11 +1,11 @@
 
 all: exe
 
-FCFLAGS=-march=native -g -fPIC -ffree-form -cpp -fbackslash -fconvert=big-endian -O2 -ffp-contract=off -fopenmp --offload-arch=${GFX} -I/home/afar/software/compilers/afar/rocm-afar-8873-drop-22.2.0/include/hipfort/amdgcn/ -I/home/afar/software/compilers/afar/rocm-afar-8873-drop-22.2.0/include/rocblas/ -Qunused-arguments
+FCFLAGS=-march=native -g -fPIC -ffree-form -cpp -fbackslash -fconvert=big-endian -O2 -ffp-contract=off -fopenmp --offload-arch=${GFX} -I${ROCM_PREFIX}/include/hipfort/amdgcn/ -I${ROCM_PREFIX}/include/rocblas/ -Qunused-arguments
 
-LIBS=/home/afar/software/compilers/afar/rocm-afar-8873-drop-22.2.0/lib/libhipfort-amdgcn.a -L/home/afar/software/compilers/afar/rocm-afar-8873-drop-22.2.0/lib/ -lrocblas -lamdhip64 -lflang_rt.hostdevice
+LIBS=${ROCM_PREFIX}/lib/libhipfort-amdgcn.a -L${ROCM_PREFIX}/lib/ -lrocblas -lamdhip64 -lflang_rt.hostdevice
 
-FC=flang $(FCFLAGS)
+FC=amdflang $(FCFLAGS)
 
 main_spnhsi.o: main_spnhsi.F90 yomdyn.o
 	$(FC) -o main_spnhsi.o -c main_spnhsi.F90

@@ -2,9 +2,6 @@
 
 set -xeu
 
-module load rocm
-
-#cleaning
 ./clean.sh
 
 FC_FLAGS="-c"

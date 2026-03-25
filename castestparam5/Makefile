@@ -1,6 +1,6 @@
 SRC=.
 BUILD=.
-FCFLAGS=-march=native -fPIC -ffree-form -cpp -fbackslash -fconvert=big-endian -O2 -ffp-contract=off -fopenmp -fPIC -fopenmp --offload-arch=gfx90a -lflang_rt.hostdevice -Qunused-arguments 
+FCFLAGS=-march=native -fPIC -ffree-form -cpp -fbackslash -fconvert=big-endian -O2 -ffp-contract=off -fopenmp -fPIC -fopenmp --offload-arch=gfx90a $(LFLANG_RT_HOSTDEVICE) -Qunused-arguments 
 FC=flang $(FCFLAGS)
 
 all: exe

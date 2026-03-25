@@ -3,4 +3,4 @@
 set -x
 set -e
 
-amdflang  test_gang.F90 
+amdflang test_gang.F90 

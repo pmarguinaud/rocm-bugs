@@ -1,7 +1,9 @@
 #!/bin/bash
 
+. ../prolog.sh
+
 set -x
 set -e
 
-amdclang -Qunused-arguments -fopenmp --offload-arch=gfx942 -lflang_rt.hostdevice -c mysort.c
-amdclang -Qunused-arguments -fopenmp --offload-arch=gfx942 -lflang_rt.hostdevice -fopenmp --offload-arch=gfx942 -lflang_rt.hostdevice mysort.o -o mysort 
+amdclang -Qunused-arguments -fopenmp --offload-arch=gfx942 $LFLANG_RT_HOSTDEVICE -c mysort.c
+amdclang -Qunused-arguments -fopenmp --offload-arch=gfx942 $LFLANG_RT_HOSTDEVICE -fopenmp --offload-arch=gfx942 $LFLANG_RT_HOSTDEVICE mysort.o -o mysort 

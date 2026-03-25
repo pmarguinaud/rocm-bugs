@@ -1,10 +1,12 @@
 #!/bin/bash
 
+. ../prolog.sh
+
 set -x
 
 FC="amdflang -Qunused-arguments -fopenmp"
 
-for opt in "" "--offload-arch=gfx942 -lflang_rt.hostdevice"
+for opt in "" "--offload-arch=gfx942 $LFLANG_RT_HOSTDEVICE"
 do
 
 \rm -f *.o *.mod *.a a.out

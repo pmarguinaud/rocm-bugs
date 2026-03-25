@@ -3,7 +3,7 @@ all: exe
 
 FCFLAGS=-march=native -g -fPIC -ffree-form -cpp -fbackslash -fconvert=big-endian -O2 -ffp-contract=off -fopenmp --offload-arch=${GFX} -I${ROCM_PREFIX}/include/hipfort/amdgcn/ -I${ROCM_PREFIX}/include/rocblas/ -Qunused-arguments
 
-LIBS=${ROCM_PREFIX}/lib/libhipfort-amdgcn.a -L${ROCM_PREFIX}/lib/ -lrocblas -lamdhip64 -lflang_rt.hostdevice
+LIBS=${ROCM_PREFIX}/lib/libhipfort-amdgcn.a -L${ROCM_PREFIX}/lib/ -lrocblas -lamdhip64 $(LFLANG_RT_HOSTDEVICE)
 
 FC=amdflang $(FCFLAGS)
 

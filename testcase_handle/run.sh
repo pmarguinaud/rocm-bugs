@@ -1,26 +1,18 @@
 #!/bin/bash
 
+. ../prolog.sh
+
 set -x
 set -e
 
-export ROCM_PREFIX=$(which amdflang)
-ROCM_PREFIX=$(dirname $ROCM_PREFIX)
-ROCM_PREFIX=$(dirname $ROCM_PREFIX)
-ROCM_PREFIX=$(dirname $ROCM_PREFIX)
+. ../prolog.sh
 
 make clean
 
-if [ $(hostname) = "electra019" ]
-then
-  GFX="gfx90a" make -j8
-  ./main_spnhsi.x 
-fi
+GFX="gfx90a" make -j8
+srun -p MI210 ./main_spnhsi.x 
 
-if [ $(hostname) = "mi300a" ]
-then
-  GFX="gfx942" make -j8
-  ./main_spnhsi.x 
-fi
+make clean
 
-
-
+GFX="gfx942" make -j8
+srun -p MI300A ./main_spnhsi.x 

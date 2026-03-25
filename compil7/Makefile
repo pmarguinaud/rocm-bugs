@@ -1,4 +1,4 @@
-FC=amdflang -march=native -fPIC -ffree-form -cpp -fbackslash -fconvert=big-endian -O0 -ffp-contract=off -fopenmp -Werror -fPIC -fopenmp --offload-arch=gfx942 -lflang_rt.hostdevice -Rpass-analysis=kernel-resource-usage -Qunused-arguments
+FC=amdflang -march=native -fPIC -ffree-form -cpp -fbackslash -fconvert=big-endian -O0 -ffp-contract=off -fopenmp -Werror -fPIC -fopenmp --offload-arch=gfx942 $(LFLANG_RT_HOSTDEVICE) -Rpass-analysis=kernel-resource-usage -Qunused-arguments
 
 BUILD=.
 

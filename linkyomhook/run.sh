@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. ../prolog.sh
+
 set -x
 set -e
 
@@ -13,7 +15,7 @@ gfortran  \
   -fPIC -O0 -fopenmp -o ./main_acdrag.x main_acdrag.o yomhook.o
 
 
-FCFLAGS="-O0 -Qunused-arguments -fopenmp --offload-arch=gfx942 -lflang_rt.hostdevice"
+FCFLAGS="-O0 -Qunused-arguments -fopenmp --offload-arch=gfx942 $LFLANG_RT_HOSTDEVICE"
 
 for f90 in yomhook.F90 main_acdrag.F90
 do

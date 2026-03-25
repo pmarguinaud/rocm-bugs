@@ -3,4 +3,5 @@
 set -x
 set -e
 
-amdflang  test_gang.F90 
+make clean
+make -j8

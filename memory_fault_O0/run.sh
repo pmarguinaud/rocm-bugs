@@ -1,6 +1,7 @@
 #!/bin/bash
 
-. ./config_env.sh
+set -x
+set -e
 
 export OFFLOAD_TRACK_NUM_KERNEL_LAUNCH_TRACES=8
 export OFFLOAD_TRACK_ALLOCATION_TRACES=true

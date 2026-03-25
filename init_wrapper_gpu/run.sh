@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -x
+set -e
 
 for f in *.F90
 do

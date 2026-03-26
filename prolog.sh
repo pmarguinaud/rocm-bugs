@@ -11,3 +11,16 @@ else
   export LFLANG_RT_HOSTDEVICE=""
 fi
 
+
+function runIfpartitionOK 
+{
+  part=$1
+  shift
+  sinfo=$(sinfo -p $part -h -o "%t")
+  if [ "$sinfo" = "drain" ]
+  then
+    exit 100
+  else
+    srun -p $part $*
+  fi
+}

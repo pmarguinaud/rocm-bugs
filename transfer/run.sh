@@ -13,5 +13,5 @@ $FC -o transfer.x transfer.F90
 
 for i in $(seq 10)
 do
-srun -p MI300X ./transfer.x 
+runIfpartitionOK MI300X ./transfer.x 
 done

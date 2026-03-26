@@ -10,9 +10,9 @@ set -e
 make clean
 
 GFX="gfx90a" make -j8
-srun -p MI210 ./main_spnhsi.x 
+runIfpartitionOK MI210 ./main_spnhsi.x 
 
 make clean
 
 GFX="gfx942" make -j8
-srun -p MI300A ./main_spnhsi.x 
+runIfpartitionOK MI300A ./main_spnhsi.x 

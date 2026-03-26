@@ -24,7 +24,7 @@ $FC -c ../main_acdrag.F90
 $FC -c ../acdrag_manyblocks.F90
 $FC -o ./main_acdrag.x ./main_acdrag.o ./acdrag_manyblocks.o ./fxtran_acdc_stack_mod.o
 
-srun -p MI300X ./main_acdrag.x
+runIfpartitionOK MI300X ./main_acdrag.x
 
 cd ..
 

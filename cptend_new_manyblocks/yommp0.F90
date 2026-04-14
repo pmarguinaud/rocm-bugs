@@ -1,0 +1,62 @@
+﻿!mod$ v1 sum:09b54ecfa56449be
+!need$ fe3180dd7f22d4c1 n parkind1
+module yommp0
+use parkind1,only:jpim
+use parkind1,only:jprd
+integer(4),allocatable::nprcids(:)
+integer(4),allocatable,target::ngpset2pe(:,:)
+integer(4)::n_regions_ns
+integer(4)::n_regions_ew
+integer(4),allocatable,target::n_regions(:)
+logical(4)::lsplit
+logical(4)::leq_regions
+logical(4)::lsplitout
+logical(4)::lsync_slcom
+logical(4)::lsync_postslcom2
+logical(4)::lsync_trans
+logical(4)::lsldebug
+logical(4)::lslondem
+logical(4)::lgptot_cap
+integer(4)::mp_type
+integer(4)::mbx_size
+integer(4)::myproc
+integer(4)::myseta
+integer(4)::mysetb
+integer(4)::mysetw
+integer(4)::mysetv
+integer(4)::mysetm
+integer(4)::mysetn
+integer(4)::my_region_ns
+integer(4)::my_region_ew
+integer(4)::nfldin
+integer(4)::nslpad
+integer(4)::nouttype
+integer(4)::nwrtout
+integer(4)::ndistio(1_8:50_8)
+logical(4)::lusewrgridall
+integer(4)::ncombflen
+logical(4)::lmpoff
+integer(4)::nspecresmin
+logical(4)::loutput
+integer(4)::noutput
+integer(4)::nprintlev
+logical(4)::lmpdiag
+logical(4)::lopt_scalar
+logical(4)::lvecadin
+logical(4)::lopt_rs6k
+logical(4)::lscmec
+integer(4)::ntrans_sync_level
+integer(4)::nproc
+integer(4)::nprgpns
+integer(4)::nprgpew
+integer(4)::nprtrns
+integer(4)::nprtrn
+integer(4)::nprtrw
+integer(4)::nprtrv
+integer(4)::nstrin
+integer(4)::nstrout
+real(8)::slowranks_delay
+real(8)::slowranks_factor
+logical(4)::lslcomm3
+logical(4)::lslextpol3
+end

@@ -1,0 +1,40 @@
+PROGRAM INIT_WRAPPER_GPU
+IMPLICIT NONE
+INTEGER, PARAMETER :: N = 2
+REAL(KIND=8), POINTER :: D_GPU(:,:)
+LOGICAL :: RES
+INTEGER :: I,J
+
+RES = .FALSE.
+
+ALLOCATE (D_GPU (N, N))
+D_GPU = 7
+
+!$omp target enter data map(alloc: D_GPU)
+!$omp target update to(D_GPU)
+
+
+!$OMP TARGET MAP(PRESENT: D_GPU) MAP(TOFROM:RES)
+
+RES=.TRUE.
+DO I=1,N
+DO J=1,N
+print *, D_GPU (I, J)
+IF(D_GPU(I,J) /= 7) THEN
+        RES = .FALSE.
+END IF
+END DO
+END DO
+
+PRINT *, "RES = ", RES
+
+!$OMP END TARGET
+
+PRINT *, "RES = ", RES
+
+IF (.NOT. RES) THEN
+    ERROR STOP
+END IF
+
+
+END PROGRAM INIT_WRAPPER_GPU

@@ -1,0 +1,23 @@
+﻿!mod$ v1 sum:41b1f6dbaf98cf53
+!need$ 17aff635a94eb7f8 n util_variable_3rb_copy_mod
+!need$ ca41b1dac1386022 n util_variable_3rb_host_mod
+!need$ a9b7cbef9708b2b9 n util_variable_3rb_legacy_mod
+!need$ 405787453589bf8e n util_variable_3rb_crc64_mod
+!need$ 41f7041cbf5c8016 n util_variable_3rb_wipe_mod
+!need$ 9597ef88fe9aaae6 n util_variable_3rb_size_mod
+!need$ 2ed18a7587b74ab0 n variable_module
+module util_variable_3rb_mod
+use variable_module,only:variable_3rb
+use util_variable_3rb_copy_mod,only:acdc_copy
+use util_variable_3rb_copy_mod,only:acdc_copy_variable_3rb
+use util_variable_3rb_host_mod,only:acdc_host
+use util_variable_3rb_host_mod,only:acdc_host_variable_3rb
+use util_variable_3rb_legacy_mod,only:acdc_legacy
+use util_variable_3rb_legacy_mod,only:acdc_legacy_variable_3rb
+use util_variable_3rb_crc64_mod,only:acdc_crc64
+use util_variable_3rb_crc64_mod,only:acdc_crc64_variable_3rb
+use util_variable_3rb_wipe_mod,only:acdc_wipe
+use util_variable_3rb_wipe_mod,only:acdc_wipe_variable_3rb
+use util_variable_3rb_size_mod,only:acdc_size
+use util_variable_3rb_size_mod,only:acdc_size_variable_3rb
+end

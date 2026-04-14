@@ -1,0 +1,63 @@
+﻿!mod$ v1 sum:6f51624aed48acc5
+!need$ fe3180dd7f22d4c1 n parkind1
+module yommp
+use parkind1,only:jpim
+type::tmp
+integer(4),allocatable::numpp(:)
+integer(4),allocatable::nprocm(:)
+integer(4),allocatable::nptrms(:)
+integer(4),allocatable::nallms(:)
+integer(4),allocatable::nptrls(:)
+integer(4),allocatable::nptrsv(:)
+integer(4),allocatable::nptrsvf(:)
+integer(4),allocatable::nptrmf(:)
+integer(4),allocatable::nspstaf(:)
+integer(4),allocatable::numll(:)
+integer(4),allocatable::nptrll(:)
+integer(4),allocatable::mylevs(:)
+integer(4),allocatable::npsurf(:)
+integer(4),allocatable::nsta(:,:)
+integer(4),allocatable::nonl(:,:)
+integer(4),allocatable::nptrfrstlat(:)
+integer(4),allocatable::nptrlstlat(:)
+integer(4),allocatable::nptrlat(:)
+integer(4),allocatable::nfrstlat(:)
+integer(4),allocatable::nlstlat(:)
+integer(4),allocatable::nbsetlev(:)
+integer(4),allocatable::nglobalindex(:)
+integer(4),allocatable::nglobalat(:)
+integer(4),allocatable::nglobalproc(:)
+integer(4),allocatable::nlocalindex(:)
+integer(4),allocatable::nlatgpp(:,:)
+integer(4),allocatable::nlongpp(:,:)
+logical(4),allocatable::lsplitlat(:)
+integer(4),allocatable::mylats(:)
+integer(4)::npsp
+integer(4)::nspec2v
+integer(4)::nspec2vf
+integer(4)::nspec2vddh
+integer(4)::nspec2v_nh
+integer(4)::nspec2v_nhx
+integer(4)::nspec2v_si
+integer(4)::nspec2v_vor_si
+integer(4)::nspec2v_nh_si
+integer(4)::nspec2v_pa_si
+integer(4)::nspec2v_ddh_si
+integer(4)::nspec2v_nh_ddh_si
+integer(4)::nspec2v_vor_ddh_si
+integer(4)::nspec2_hd
+integer(4)::nspec2_nh_hd
+integer(4)::nspec2_nhx_hd
+integer(4)::nspec2_q_hd
+integer(4)::nspec2_o3_hd
+integer(4)::nspec2_l_hd
+integer(4)::nspec2_i_hd
+integer(4)::nbsetsp
+integer(4)::nfrstloff
+integer(4)::myfrstactlat
+integer(4)::mylstactlat
+integer(4)::nptrfloff
+integer(4),allocatable::npossp(:)
+integer(4),allocatable::ndim0g(:)
+end type
+end

@@ -1,0 +1,23 @@
+﻿!mod$ v1 sum:4dca8b1059f76ef2
+!need$ 613ac138cecdc575 n util_variable_2rb_copy_mod
+!need$ e2b6b520f996508b n util_variable_2rb_host_mod
+!need$ a6f8322f9a193108 n util_variable_2rb_legacy_mod
+!need$ 7007895b95f8e443 n util_variable_2rb_crc64_mod
+!need$ a6043707f1bf487f n util_variable_2rb_wipe_mod
+!need$ a771ff6390db6927 n util_variable_2rb_size_mod
+!need$ 2ed18a7587b74ab0 n variable_module
+module util_variable_2rb_mod
+use variable_module,only:variable_2rb
+use util_variable_2rb_copy_mod,only:acdc_copy
+use util_variable_2rb_copy_mod,only:acdc_copy_variable_2rb
+use util_variable_2rb_host_mod,only:acdc_host
+use util_variable_2rb_host_mod,only:acdc_host_variable_2rb
+use util_variable_2rb_legacy_mod,only:acdc_legacy
+use util_variable_2rb_legacy_mod,only:acdc_legacy_variable_2rb
+use util_variable_2rb_crc64_mod,only:acdc_crc64
+use util_variable_2rb_crc64_mod,only:acdc_crc64_variable_2rb
+use util_variable_2rb_wipe_mod,only:acdc_wipe
+use util_variable_2rb_wipe_mod,only:acdc_wipe_variable_2rb
+use util_variable_2rb_size_mod,only:acdc_size
+use util_variable_2rb_size_mod,only:acdc_size_variable_2rb
+end

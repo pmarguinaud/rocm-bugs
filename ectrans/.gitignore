@@ -1,0 +1,6 @@
+install/
+ectrans
+ecbuild
+fiat
+*-build*
+fftw-3.3.10.tar.gz

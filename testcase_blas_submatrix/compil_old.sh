@@ -11,7 +11,7 @@ flang -g -fopenmp -fconvert=big-endian -fPIC -I/home/afar/software/compilers/afa
 
 flang -g -fopenmp -fconvert=big-endian -fPIC -I/home/afar/software/compilers/afar/rocm-afar-10004-drop-22.3.0/include/hipfort/amdgcn/ -I/home/afar/software/compilers/afar/rocm-afar-10004-drop-22.3.0/include/rocblas/  -L/home/afar/software/compilers/afar/rocm-afar-10004-drop-22.3.0/lib/ --offload-arch=gfx942 -O2 -Qunused-arguments -o test_geam.x test_geam.F90 -lrocblas -lamdhip64 /home/afar/software/compilers/afar/rocm-afar-10004-drop-22.3.0/lib/libhipfort-amdgcn.a -DFULL_MATRIX
 
-flang -g -fopenmp -fconvert=big-endian -fPIC -I/home/afar/software/compilers/afar/rocm-afar-10004-drop-22.3.0/include/hipfort/amdgcn/ -I/home/afar/software/compilers/afar/rocm-afar-10004-drop-22.3.0/include/rocblas/  -L/home/afar/software/compilers/afar/rocm-afar-10004-drop-22.3.0/lib/ --offload-arch=gfx942 -O2 -Qunused-arguments -o test_geam.x test_geam.F90 -lrocblas -lamdhip64 /home/afar/software/compilers/afar/rocm-afar-10004-drop-22.3.0/lib/libhipfort-amdgcn.a 
+flang -g -fopenmp -fconvert=big-endian -fPIC -I/home/afar/software/compilers/afar/rocm-afar-10004-drop-22.3.0/include/hipfort/amdgcn/ -I/home/afar/software/compilers/afar/rocm-afar-10004-drop-22.3.0/include/rocblas/  -L/home/afar/software/compilers/afar/rocm-afar-10004-drop-22.3.0/lib/ --offload-arch=gfx942 -O2 -Qunused-arguments -o test_geam_partiel.x test_geam.F90 -lrocblas -lamdhip64 /home/afar/software/compilers/afar/rocm-afar-10004-drop-22.3.0/lib/libhipfort-amdgcn.a 
 
 
 
